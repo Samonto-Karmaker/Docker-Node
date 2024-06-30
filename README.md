@@ -1,6 +1,6 @@
 # Docker-Node Project
 
-This project demonstrates a basic setup for containerizing a Node.js application using Docker. The application is a simple Express server that returns a JSON message on the root route.
+This project demonstrates a basic setup for containerizing a Node.js application using Docker. The application is a simple Express server that returns a JSON message on the root route. This repo also contains a docker notes folder that has useful docker commends and an example docker-compose.yaml file for MongoDB and Mongo Express. For more information check out the official documentation [Docker's official documentation](https://docs.docker.com/).
 
 ## Getting Started
 
