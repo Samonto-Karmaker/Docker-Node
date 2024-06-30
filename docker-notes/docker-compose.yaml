@@ -1,0 +1,25 @@
+# This is an example of a Docker Compose file that starts a MongoDB server and a Mongo Express web interface.
+
+version: '3.8'  # Specifies the Docker Compose file format version
+services:
+  mongo:
+    image: mongo  # Uses the official MongoDB image from Docker Hub
+    ports:
+      - "27017:27017"  # Maps port 27017 on the host to port 27017 in the container, allowing external access to MongoDB
+    volumes:
+      - mongo-data:/data/db  # Persists MongoDB data to a named volume
+  
+  mongo-express:
+    image: mongo-express  # Uses the Mongo Express web interface image from Docker Hub
+    ports:
+      - "8081:8081"  # Maps port 8081 on the host to port 8081 in the container, allowing access to the Mongo Express web interface
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo  # Configures Mongo Express to connect to the MongoDB server using the service name 'mongo'
+      ME_CONFIG_BASICAUTH_USERNAME: root  # Sets the username for basic auth in Mongo Express
+      ME_CONFIG_BASICAUTH_PASSWORD: example  # Sets the password for basic auth in Mongo Express
+    depends_on:
+      - mongo  # Ensures Mongo Express starts after MongoDB
+
+volumes:
+  mongo-data:
+    driver: local  # Specifies that the mongo-data volume is stored locally
