@@ -20,7 +20,7 @@ To run this project, you need to pull the image from Docker Hub and run it using
 docker pull samontokarmaker/my-first-image
 ```
 
-1. Run the container:
+2. Run the container:
 ```sh
 docker run -p 3000:3000 samontokarmaker/my-first-image
 ```
@@ -28,9 +28,11 @@ docker run -p 3000:3000 samontokarmaker/my-first-image
 This command will start the container and map port 3000 of the container to port 3000 on your host, allowing you to access the application at http://localhost:3000.
 
 ## Built With
-Node.js - The runtime environment
-Express - The web framework used
-Docker - Containerization platform
+1. Node.js - The runtime environment
+
+2. Express - The web framework used
+
+3. Docker - Containerization platform
 
 ## Authors
 Samonto Karmaker
